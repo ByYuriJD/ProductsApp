@@ -26,6 +26,8 @@ namespace ProductsApp
 			db = new PartnersContext();
 			db.Products.Load();
 			db.ProductTypes.Load();
+			db.Materials.Load();
+			db.MaterialsProducts.Load();
 
 			dataGridView.DataSource = db.Products.Local.ToBindingList();
 
@@ -77,8 +79,35 @@ namespace ProductsApp
 					product.LengthPackage + "x"
 					+ product.WidthPackage + "x"
 					+ product.HeightPackage;
-			}
 
+			}
+			foreach (DataGridViewColumn column in dataGridView.Columns) {
+				column.SortMode = DataGridViewColumnSortMode.NotSortable;
+
+			}
+		}
+
+		private void buttonView_Click_1(object sender, EventArgs e) {
+			if (dataGridView.SelectedCells.Count == 0) {
+				return;
+			}
+			Product selectedProduct = db.Products.Local.FirstOrDefault(x => (Int32)x.Id ==
+				Convert.ToInt32(dataGridView.Rows[dataGridView.SelectedCells[0].RowIndex].Cells["Id"].Value));
+
+			FormProductInfo catalogue = new FormProductInfo(selectedProduct);
+			catalogue.ShowDialog();
+		}
+
+		private void buttonMaterials_Click(object sender, EventArgs e) {
+
+			if (dataGridView.SelectedCells.Count == 0) {
+				return;
+			}
+			Product selectedProduct = db.Products.Local.FirstOrDefault(x => (Int32)x.Id ==
+				Convert.ToInt32(dataGridView.Rows[dataGridView.SelectedCells[0].RowIndex].Cells["Id"].Value));
+
+			FormMaterials materials = new FormMaterials(selectedProduct);
+			materials.ShowDialog();
 		}
 	}
 }

@@ -44,7 +44,7 @@
 			panel1.Dock = DockStyle.Top;
 			panel1.Location = new Point(8, 8);
 			panel1.Name = "panel1";
-			panel1.Size = new Size(624, 70);
+			panel1.Size = new Size(624, 50);
 			panel1.TabIndex = 0;
 			// 
 			// tableLayoutPanel1
@@ -59,7 +59,7 @@
 			tableLayoutPanel1.Name = "tableLayoutPanel1";
 			tableLayoutPanel1.RowCount = 1;
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			tableLayoutPanel1.Size = new Size(624, 70);
+			tableLayoutPanel1.Size = new Size(624, 50);
 			tableLayoutPanel1.TabIndex = 3;
 			// 
 			// buttonMaterials
@@ -67,20 +67,22 @@
 			buttonMaterials.Dock = DockStyle.Left;
 			buttonMaterials.Location = new Point(315, 3);
 			buttonMaterials.Name = "buttonMaterials";
-			buttonMaterials.Size = new Size(135, 64);
+			buttonMaterials.Size = new Size(135, 44);
 			buttonMaterials.TabIndex = 1;
 			buttonMaterials.Text = "Посмотреть себестоимость";
 			buttonMaterials.UseVisualStyleBackColor = true;
+			buttonMaterials.Click += buttonMaterials_Click;
 			// 
 			// buttonView
 			// 
 			buttonView.Dock = DockStyle.Right;
 			buttonView.Location = new Point(132, 3);
 			buttonView.Name = "buttonView";
-			buttonView.Size = new Size(177, 64);
+			buttonView.Size = new Size(177, 44);
 			buttonView.TabIndex = 0;
 			buttonView.Text = "Посмотреть подробнее";
 			buttonView.UseVisualStyleBackColor = true;
+			buttonView.Click += buttonView_Click_1;
 			// 
 			// dataGridView
 			// 
@@ -90,10 +92,10 @@
 			dataGridView.BackgroundColor = Color.White;
 			dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dataGridView.Dock = DockStyle.Fill;
-			dataGridView.Location = new Point(8, 78);
+			dataGridView.Location = new Point(8, 58);
 			dataGridView.Name = "dataGridView";
 			dataGridView.ReadOnly = true;
-			dataGridView.Size = new Size(624, 339);
+			dataGridView.Size = new Size(624, 359);
 			dataGridView.TabIndex = 1;
 			// 
 			// FormCatalogue
